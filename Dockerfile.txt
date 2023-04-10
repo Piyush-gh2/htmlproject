@@ -1,0 +1,16 @@
+ FROM ubuntu 22.04 
+
+# install dependencies
+RUN apt-get update & & \
+apt-get -y install apache2
+
+
+change host name
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+#Install apache and write hello world message
+RUN echo 'My first heading & My first paragraph ...!' > /var/www/html/htmlproject/piy.html
+
+
+EXPOSE 80
+ 
